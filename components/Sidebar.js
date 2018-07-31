@@ -9,10 +9,12 @@ export default class Sidebar extends React.Component {
     super(props);
     this.handleClick = this.handleClick.bind(this);
   }
+  
   handleClick(index, ev) {
     ev.preventDefault();
     this.props.onSelect(index);
   }
+  
   render() {
     const { files, selectedFileIndex } = this.props;
 
