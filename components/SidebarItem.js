@@ -2,6 +2,7 @@
 
 import React from 'react';
 import classNames from 'classnames';
+
   // Find first non-empty line and use as title.
 const getTitle = file =>
   file.split('\n').find(line => line.length);
