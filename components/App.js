@@ -21,35 +21,35 @@ export default class App extends React.Component {
     this.handleAdd = this.handleAdd.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
   }
-  
+
   componentDidMount() {
     // TODO
     this.removeListener = fileStore.addListener((files) => {
       this.setState({ files });
     });
   }
-  
+
   componentWillUnmount() {
     // TODO
     this.removeListener();
   }
-  
+
   handleChange(ev) {
     const { selectedFileIndex } = this.state;
-    actions.updatEFile(selectedFileIndex, ev.target.value);
+    actions.updateFile(selectedFileIndex, ev.target.value);
   }
-  
+
   handleSelect(selectedFileIndex) {
     // TODO Update selectedFileIndex state
     this.setState({selectedFileIndex});
   }
-  
+
   handleAdd(ev) {
     ev.preventDefault();
     // TODO Dispatch action
     actions.addFile();
   }
-  
+
   handleRemove(ev) {
     ev.preventDefault()
     // TODO Dispatch action
@@ -57,7 +57,7 @@ export default class App extends React.Component {
     actions.removeFile(selectedFileIndex);
     this.setState({ selectedFileIndex: 0 });
   }
-  
+
   render() {
     const { files, selectedFileIndex } = this.state;
     const file = files[selectedFileIndex];
